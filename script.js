@@ -23,8 +23,6 @@ const getCount = (tiles, color) => {
     .length;
 };
 
-const printBoard = (board) => {};
-
 const updateScore = (tiles, scoreDisplays) => {
   scoreDisplays[0].innerHTML = getCount(tiles, "blue");
   scoreDisplays[1].innerHTML = getCount(tiles, "pink");
@@ -178,7 +176,6 @@ const updateValidPositions = (tiles, board, color) => {
     tile.classList.remove("valid");
   });
   const validPositions = getAvailablePositions(tiles, board, color);
-  console.log(validPositions.length);
   if (!validPositions.length) {
     endGame(tiles);
   }
@@ -424,7 +421,7 @@ const startGame = () => {
         currentPlayer = currentPlayer === "blue" ? "pink" : "blue";
         // Show whos next
         updateNextPlayerDisplay(currentPlayer);
-        // TODO if single player
+        // if single player
         if (noOfPlayers === 1) {
           clearValidPositions(tiles);
           setTimeout(() => {
@@ -433,6 +430,11 @@ const startGame = () => {
               board,
               currentPlayer
             );
+            // No moves possible
+            if (!positions.length) {
+              endGame(tiles);
+              return;
+            }
             const sortedPositions = positions.sort(
               (p1, p2) => p2.flips - p1.flips
             );
