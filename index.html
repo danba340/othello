@@ -2,13 +2,116 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>title</title>
+    <title>Othello</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
-    />
+    <link rel="stylesheet" href="tachyons.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="tc wrapper pt4 flex">
+      <div class="w-30 pv5">
+        <h1 class="pb4"><span class="burger">🍔 </span>Flipper</h1>
+        <button id="start">New game</button>
+        <form id="no-of-players" class="mt4 block flex justify-center">
+          <span>Players:</span>
+          <input
+            checked
+            type="radio"
+            id="single"
+            name="gender"
+            value="single"
+          />
+          <label for="single">1</label>
+          <input type="radio" id="multi" name="gender" value="multi" />
+          <label for="female">2</label>
+        </form>
+        <div class="turn-indicator center flex justify-center items-center mv4">
+          <div class="w-20">Next:</div>
+          <div class="indicator-circle w-20">
+            <!-- created in js -->
+          </div>
+        </div>
+        <div class="turn-indicator center flex justify-center items-center mv4">
+          <div class="w-20 f3">
+            👨🏻‍🍳 <span class="score ml1 light-blue"></span>
+          </div>
+          <div class="w-20 f3">
+            🍔 <span class="score ml1 light-red"></span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap board center w-60">
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+        <div class="tile"><div class="blank"></div></div>
+      </div>
+    </div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+      lazyload
+    />
+
+    <script src="script.js"></script>
+  </body>
 </html>

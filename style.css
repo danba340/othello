@@ -1,0 +1,109 @@
+body {
+  color: white;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  font-size: 18px;
+  min-height: 100vh;
+}
+h1 {
+  margin: 0;
+}
+input[type="radio"] {
+  margin: 0 10px;
+}
+.burger {
+  vertical-align: middle;
+}
+.wrapper {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding-bottom: 100%;
+}
+.board {
+  width: 60%;
+  background-image: linear-gradient(to left, #222 0%, black 100%);
+  border: 3px solid #555;
+  border-radius: 5px;
+}
+.indicator-circle {
+  padding: 5px;
+}
+.tile {
+  width: calc(100% / 8);
+  /* border: 1px rgb(59, 46, 58) solid; */
+  padding: 5px;
+}
+.tile .blank:after {
+  content: "";
+  display: block;
+  padding-bottom: calc(100% - 2px);
+}
+.tile.valid .blank:after {
+  border: 1px solid #999;
+  border-radius: 50%;
+}
+.circle {
+  border-radius: 50%;
+  width: 90%;
+  padding-bottom: 90%;
+}
+
+.flip-circle svg {
+  padding-top: 10%;
+  width: 70%;
+  height: 70%;
+}
+.flip-circle {
+  background-color: transparent;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.flip-circle-inner:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/* This container is needed to position the front and back side */
+.flip-circle-inner {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-circle.pink .flip-circle-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-circle-front,
+.flip-circle-back {
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-circle-front {
+  background-image: linear-gradient(135deg, #65fdf0 10%, #1d6fa3 100%);
+}
+
+/* Style the back side */
+.flip-circle-back {
+  background-image: linear-gradient(135deg, #fff6b7 10%, #f6416c 100%);
+  transform: rotateY(180deg);
+}
