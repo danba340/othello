@@ -358,6 +358,24 @@ const startGame = () => {
   // Show starting player
   updateNextPlayerDisplay(currentPlayer);
 
+  // Create board object
+  tiles.forEach((tile, index) => {
+    const tileX = index % 8;
+    const tileY = Math.floor(index / 8);
+    tile.setAttribute("data-x", tileX);
+    tile.setAttribute("data-y", tileY);
+    if (tile.children[0].classList.contains("blue")) {
+      board[tileX][tileY] = "blue";
+    } else if (tile.children[0].classList.contains("pink")) {
+      board[tileX][tileY] = "pink";
+    } else {
+      board[tileX][tileY] = "";
+    }
+  });
+
+  // Start first turn
+  updateValidPositions(tiles, board, currentPlayer);
+
   // Add click event
   tiles.forEach((tile) => {
     tile.addEventListener("click", (e) => {
@@ -433,24 +451,6 @@ const startGame = () => {
       }
     });
   });
-
-  // Create board object
-  tiles.forEach((tile, index) => {
-    const tileX = index % 8;
-    const tileY = Math.floor(index / 8);
-    tile.setAttribute("data-x", tileX);
-    tile.setAttribute("data-y", tileY);
-    if (tile.children[0].classList.contains("blue")) {
-      board[tileX][tileY] = "blue";
-    } else if (tile.children[0].classList.contains("pink")) {
-      board[tileX][tileY] = "pink";
-    } else {
-      board[tileX][tileY] = "";
-    }
-  });
-
-  // Start first turn
-  updateValidPositions(tiles, board, currentPlayer);
 };
 
 // Constants
