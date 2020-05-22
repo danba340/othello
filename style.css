@@ -34,6 +34,7 @@ input[type="radio"] {
   background-image: linear-gradient(to left, #222 0%, black 100%);
   border: 3px solid #555;
   border-radius: 5px;
+  height: 100%;
 }
 .indicator-circle {
   padding: 5px;
